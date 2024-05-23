@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul{
+        display: flex;
+        gap: 2rem;
+        li {
+            a {
+              color: #000;
+              font-size: 1.2rem;
+            }
+        }
+    }
+    .icons {
+        display: flex;
+        gap: 2rem;
+        font-size: 1.5rem;
+      }
+      .logo{
+        span{
+            font-size: 2rem;  
+              }
+        }
+        .shop{
+            color: red;
+        }
+      }
