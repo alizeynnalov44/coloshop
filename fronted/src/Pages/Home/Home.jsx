@@ -1,35 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import { Card } from 'antd';
-const { Meta } = Card;
+
 import { Col, Row } from 'antd';
+import { getAllData } from '../../services';
 const style = {
   padding: '8px 0',
 };
 const Home = () => {
-  
+  const [product, setProduct]= useState(null)
+  useEffect(()=>{
+    getAllData().then(res => {
+      setProduct(res.data.data)
+    })
+  },[])
 
   return (
     <div>
      <h3> New Arrivals</h3>
-     <Row gutter={16}>
+     <Row
+      gutter={{
+        xs: 8,
+        sm: 16,
+        md: 24,
+        lg: 32,
+      }}
+    >
       {
-        products && products.map((p) =>{
-          return(
-<Col className="gutter-row" span={6}>
-        <div style={style}> <Card
-    hoverable
-    style={{
-      width: 240,
-    }}
-    cover={<img alt="example" src={imageURL} />}
-  >
-    <Meta title="Europe Street beat" description="www.instagram.com" />
-  </Card></div>
-      </Col> )
+        product &&
+        product.map((p)=>{
+          
+      
+          
         })
       }
-      
-      </Row>
+     
+    </Row>
+     
     </div>
   )
 }
